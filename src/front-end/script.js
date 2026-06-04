@@ -11,10 +11,10 @@ localStorage.setItem("visit_count", visitCount);
 // Create the HTML content
 let html = `
     Copyright ${fullYear} 
-    <a href="www.github.com\egiberne" target="_blank">
+    <a href="www.github.com\egiberne\cloudresumerchallenge" target="_blank">
     egiberne@github 
     </a>
-    visit #${visitCount}
+    Your #${visitCount} visit
 `
 // Display the values 
 document.getElementById('footer').innerHTML= html
