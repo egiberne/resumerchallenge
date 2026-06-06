@@ -31,8 +31,11 @@ fetch("http://127.0.0.1:8000/health")
 .then(response => response.json())
 .then(data=>console.log(data))
 
-fetch("http://127.0.0.1:8000/echo")
+fetch("http://127.0.0.1:8000/echo",{method:"POST"})
 .then(response => response.json())
-.then(data=>console.log(data))
+.then(data => console.log(data))
 
+fetch("http://127.0.0.1:8000/counter",{method:"POST"})
+.then(response => response.json())
+.then(data => console.log(data))
 

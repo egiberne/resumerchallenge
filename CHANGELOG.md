@@ -1,5 +1,47 @@
 # Changelog
 
+## 0.8.1 - 2026-06-07
+### Fixed
+- Troubleshoot issues :
+    - client-side in the browser page: "detail":"Method Not Allowed" ; Browser submit GET request by default.
+    - client-side in the browser dev tool : no error :It works as Cross-origin enabled with CORS protocol (cors) is enabled by default
+    - server-side terminal console tool  : "GET /visit HTTP/1.1" 405 Method Not Allowed
+        - Correct with specify the method POST in the command:
+        ```powershell
+         Invoke-WebRequest -uri  http://127.0.0.1:8000/health -Method POST 
+        `
+        
+    - client side javascript console:
+        - Correct this CORS error, with enabling the CORS protocol on the backend
+        `Access to fetch at 'http://127.0.0.1:8000/health' from origin 'http://127.0.0.1:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+        script.js:30  GET http://127.0.0.1:8000/health net::ERR_FAILED 200 (OK)
+        `
+       ```python
+        origins =['*']
+        app.add_middleware(
+            CORSMiddleware,
+            allow_origins=origins
+        )
+        ```
+        - Correct this CORS error, with enabling CORS protocol in the back-end :
+        `Access to fetch at 'http://127.0.0.1:8000/echo' from origin 'http://127.0.0.1:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+        script.js:34  POST http://127.0.0.1:8000/echo net::ERR_FAILED 200 (OK)
+        `
+        
+        ```python
+        origins =['*']
+        app.add_middleware(
+            CORSMiddleware,
+            allow_origins=origins
+        )
+        ```
+        - and specify the method in the front-end
+        ```javascript
+        {method:"POST"}
+        ```
+        
+
+
 
 ## 0.8.0 - 2026-06-06
 ### Added 

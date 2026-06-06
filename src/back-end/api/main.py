@@ -1,11 +1,18 @@
 ## import fastapi library
 from fastapi import FastAPI, Request
-
+## import the CORS| Cross Origin Resource Sharing module
+from fastapi.middleware.cors import CORSMiddleware
 
 
 ## create a fastapi instance
 app = FastAPI()
 
+
+origins =['*']
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins
+)
 
 ## GET requests
 
