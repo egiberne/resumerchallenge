@@ -1,4 +1,9 @@
 # Changelog
+## 0.8.3- 2026-06-09
+### Changed
+- Updated LICENSE with missing terms and content.
+- Updated README.md with a cleared roadmap and table
+- Update index.html with minor but relevant content.
 
 ## 0.8.2 - 2026-06-07
 ### Fixed
